@@ -8,10 +8,10 @@ function calculatebmi() {
 
 /*HEIGHT TO M */
 
-    height.value = height.value/100
+    let H = height.value/100
 
 /*BMI CALC */
-    let bmi = weight.value/(height.value*height.value)
+    let bmi = weight.value/(H * H)
 
 
     let category = "";
@@ -24,9 +24,9 @@ function calculatebmi() {
         } else if (bmi > 29.9) {
             category = "Obesity";
         }
-    if (weight.value >= 1 || height.value >= 1){ 
+    if (weight.value >= 1 || H >= 1){ 
         result.innerHTML = 'Your BMI is ' + bmi.toFixed(2) + " " + category
-    } else if( weight.value <= 0 || height.value <= 0){
+    } else if( weight.value <= 0 || H <= 0){
         result.innerHTML = "Please enter valid measurements"
     }
 }
